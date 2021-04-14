@@ -52,3 +52,26 @@ h1 {
 }
 
 /* TODO List */
+
+.list-item li {
+    display: flex;
+    justify-content: space-between;
+    color: #eebbc3;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #eebbc3b9;
+}
+
+.list-item li:last-child {
+    border-bottom: 0;
+}
+
+.list-item li i {
+    opacity: .5;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.list-item li i:hover {
+    opacity: 1;
+}
