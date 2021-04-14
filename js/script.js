@@ -45,6 +45,14 @@ $(document).ready(function () {
         // Template
         var item = template.clone(); // Creo Clone
 
+
+        // FASE 5 valuto seconda chiave oggetti e applico classe 
+
+        if (toDo.completed) { //True, riferito alla chiave dell'oggetto
+            item.find('.text').addClass('completed');
+        }
+
+
         item.children('.text').text(toDo.text); // Aggiungo solo la chiave text
 
         // Aggiunta alla lista in HTML
@@ -74,8 +82,38 @@ $(document).ready(function () {
                 alert('Inserire qualcosa')
             }
         }
-    })
+    });
 
+
+    // Fase 3 Rimozione Item dalla lista in HTML
+
+    // METODO A (NON FUNZIONALE)  --> perchè non viene applicato ai nuovi input inseriti
+
+    // list.find('li i').click(function () {
+    //     $(this).parent('li').remove(); // Rimuove nodo dal DOM
+    // });
+
+
+    // METODO B CORRETTO
+
+    /*******
+     * Elemento da monitorare e utilizzo di " on ( 3 parametri( tipo di evento, quali elementi, function)):"
+     * 
+     * - body elemento da monitorare
+     * - tipo click
+     * - su quali
+     *  */
+
+    $('body').on('click', '.list-item li i', function () {
+        $(this).parent('li').remove(); // Rimuove nodo dal DOM
+    });
+
+
+    // Fase 4 Segnare elementi lista se completata o no con un click
+
+    $('body').on('click', '.list-item .text', function () {
+        $(this).toggleClass('completed');
+    });
 
 
 

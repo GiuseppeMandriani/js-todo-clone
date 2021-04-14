@@ -60,6 +60,7 @@ h1 {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dotted #eebbc3b9;
+    cursor: pointer;
 }
 
 .list-item li:last-child {
@@ -74,4 +75,9 @@ h1 {
 
 .list-item li i:hover {
     opacity: 1;
+}
+
+.list-item .text.completed {
+    text-decoration: line-through;
+    color: #a7b2ee;
 }
